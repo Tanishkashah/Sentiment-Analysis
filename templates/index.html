@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #495057;
+        }
+        textarea {
+            width: calc(100% - 30px);
+            height: 150px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #adb5bd;
+            margin-bottom: 25px;
+            font-size: 18px;
+            resize: vertical;
+        }
+        select {
+            width: calc(100% - 30px);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #adb5bd;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        button {
+            width: calc(100% - 30px);
+            padding: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Tool</h1>
+        <form id="form">
+            <textarea name="text" id="text" placeholder="Enter your movie review here..." required></textarea>
+            <select name="model" id="model">
+                <option value="logistic_regression">Logistic Regression</option>
+                <option value="neural_network">Neural Network</option>
+            </select>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('form').onsubmit = async function(event) {
+            event.preventDefault();
+            
+            const text = document.getElementById('text').value;
+            const model = document.getElementById('model').value;
+            
+            const response = await fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'text': text,
+                    'model': model
+                })
+            });
+            
+            const result = await response.json();
+            
+            document.getElementById('result').textContent = 'Prediction: ' + result.prediction;
+        };
+    </script>
+</body>
+</html>
