@@ -42,11 +42,9 @@ Both models were trained on the preprocessed dataset and evaluated using metrics
 ## Conclusion
 This project demonstrated the effectiveness of both Logistic Regression and MLP Classifier for sentiment analysis. While the MLP Classifier showed better performance, Logistic Regression remains a valuable tool for simpler tasks.
 
-## Files Included
-- `ML-modelling.ipynb`: Jupyter notebook containing the implementation of Logistic Regression and MLP Classifier.
-- `lstm.ipynb`: (If applicable) Jupyter notebook for LSTM model implementation (not used in this project).
 
-## Installation
-To run this project, ensure you have the following libraries installed:
-```bash
-pip install pandas numpy scikit-learn
+
+### Notes:
+- Adjust the links and sections based on your actual project files and structure.
+- You can add or remove sections as needed to fit your project requirements.
+- Ensure that any additional dependencies or setup instructions are included in the installation section.
