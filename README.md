@@ -1,79 +1,52 @@
-# Sentiment-Analysis
+# Sentiment Analysis Project
 
-Welcome to the Sentiment Analysis Web Application! This project provides a straightforward tool for analyzing text sentiment using machine learning models. Whether you're interested in how various texts are perceived or looking to incorporate sentiment analysis into your projects, this tool offers simplicity and effectiveness.
+## Overview
+This project aims to classify movie reviews as positive or negative using two different machine learning models: **Logistic Regression** and **Multi-Layer Perceptron (MLP) Classifier**. The models are built and evaluated using a publicly available dataset of movie reviews.
 
-## ✨ Features
-- **Model Selection**: Choose between Logistic Regression or Neural Network models.
-- **Instant Sentiment Analysis**: Get immediate feedback on whether your text is positive or negative.
-- **User-Friendly Interface**: Enjoy a clean and intuitive design for easy navigation.
+## Table of Contents
+1. [Task Overview and Problem Statement](#task-overview-and-problem-statement)
+2. [Dataset](#dataset)
+3. [Data Preprocessing](#data-preprocessing)
+4. [Model Building](#model-building)
+5. [Model Training and Evaluation](#model-training-and-evaluation)
+6. [Insights And Observations](#insights-and-observations)
+7. [Conclusion](#conclusion)
+8. [Files Included](#files-included)
 
-## 🔧 Technology Stack
-- **Backend**: Flask
-- **Machine Learning**: Scikit-Learn
-- **Frontend**: HTML, CSS
-- **Data Handling**: Joblib for model and vectorizer serialization
+## Task Overview and Problem Statement
+The goal of this project is to develop a sentiment analysis model that can accurately classify movie reviews as either positive or negative. This is achieved by leveraging two different modeling approaches: Logistic Regression and MLP Classifier.
 
-## 🚀 Installation
+## Dataset
+The dataset used for this project is the IMDb dataset, which contains 50,000 movie reviews labeled as positive or negative. The dataset is publicly available and can be accessed [here](https://ai.stanford.edu/~amaas/data/sentiment/).
 
-To set up and run this project locally, follow these steps:
+## Data Preprocessing
+Data preprocessing steps include:
+- Lowercasing the text
+- Tokenization
+- Removing punctuation and stopwords
+- Stemming/Lemmatization
+- Vectorization using TF-IDF
 
-1. **Clone the Repository:**
+## Model Building
+Two models were built for this project:
+1. **Logistic Regression**: A simple and interpretable model for binary classification.
+2. **MLP Classifier**: A neural network model capable of capturing complex patterns in the data.
 
-    ```bash
-    git clone https://github.com/yourusername/Sentiment-Analysis-Web-App.git
-    cd Sentiment-Analysis-Web-App
-    ```
+## Model Training and Evaluation
+Both models were trained on the preprocessed dataset and evaluated using metrics such as accuracy, precision, recall, and F1-score. The evaluation results are compared to determine the effectiveness of each model.
 
-2. **Set Up a Virtual Environment:**
+## Insights And Observations
+- The MLP Classifier generally outperformed Logistic Regression in terms of accuracy and F1-score.
+- Logistic Regression provided a strong baseline due to its simplicity and interpretability.
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-    ```
+## Conclusion
+This project demonstrated the effectiveness of both Logistic Regression and MLP Classifier for sentiment analysis. While the MLP Classifier showed better performance, Logistic Regression remains a valuable tool for simpler tasks.
 
-3. **Install Dependencies:**
+## Files Included
+- `ML-modelling.ipynb`: Jupyter notebook containing the implementation of Logistic Regression and MLP Classifier.
+- `lstm.ipynb`: (If applicable) Jupyter notebook for LSTM model implementation (not used in this project).
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Download Models and Vectorizer:**
-
-    Ensure you have the pre-trained models (`logistic_model.pkl`, `mlp_model.pkl`) and vectorizer (`vectorizer.pkl`) in the project directory.
-
-5. **Run the Application:**
-
-    ```bash
-    python app.py
-    ```
-
-6. **Access the Application:**
-
-    Open your web browser and go to `http://127.0.0.1:5000/` to start using the app.
-
-## 🔍 Usage
-
-1. **Select a Model:** Choose between Logistic Regression or Neural Network from the dropdown menu.
-2. **Enter Text:** Type the text you want to analyze.
-3. **Click "Analyze Sentiment":** Receive the sentiment analysis result instantly.
-
-## 📈 Example Output
-
-- **Model Used**: Neural Network
-- **Sentiment**: Negative
-
-## 🤝 Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/YourFeature`
-3. Make your changes and commit: `git commit -am 'Add new feature'`
-4. Push the branch: `git push origin feature/YourFeature`
-5. Open a pull request.
-
-Thank you for exploring this project! We hope it serves your sentiment analysis needs well. 🎉
-
----
-
-Feel free to modify any section to better fit your project’s details or personal style!
+## Installation
+To run this project, ensure you have the following libraries installed:
+```bash
+pip install pandas numpy scikit-learn
