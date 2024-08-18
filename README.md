@@ -17,7 +17,7 @@ This project aims to classify movie reviews as positive or negative using two di
 The goal of this project is to develop a sentiment analysis model that can accurately classify movie reviews as either positive or negative. This is achieved by leveraging two different modeling approaches: Logistic Regression and MLP Classifier.
 
 ## Dataset
-The dataset used for this project is the IMDb dataset, which contains 50,000 movie reviews labeled as positive or negative. The dataset is publicly available and can be accessed [here](https://ai.stanford.edu/~amaas/data/sentiment/).
+The dataset used for this project is the IMDb dataset, which contains 50,000 movie reviews labeled as positive or negative. The dataset is publicly available and can be accessed publically
 
 ## Data Preprocessing
 Data preprocessing steps include:
